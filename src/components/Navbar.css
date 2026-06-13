@@ -1,0 +1,152 @@
+.navbar {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+  max-width: 1200px;
+  padding: 15px 40px;
+  z-index: 1000;
+  transition: all 0.4s ease;
+  background: rgba(10, 10, 10, 0.4);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-radius: 50px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.navbar.scrolled {
+  background: rgba(10, 10, 10, 0.85);
+  padding: 10px 40px;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.7);
+  border: 1px solid rgba(217, 4, 41, 0.2);
+  top: 15px;
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.logo {
+  font-family: var(--font-heading);
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: var(--white);
+  letter-spacing: 2px;
+}
+
+.logo span {
+  color: var(--red);
+}
+
+.nav-links {
+  display: flex;
+  gap: 30px;
+}
+
+.nav-links a {
+  font-family: var(--font-heading);
+  font-size: 1rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  position: relative;
+  padding-bottom: 5px;
+}
+
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--red);
+  transition: width 0.3s ease;
+  box-shadow: 0 0 10px var(--red);
+}
+
+.nav-links a:hover {
+  color: var(--red);
+  text-shadow: 0 0 15px rgba(217, 4, 41, 0.5);
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.hamburger {
+  display: none;
+  background: transparent;
+  color: var(--white);
+  border: none;
+  cursor: pointer;
+  z-index: 1001;
+  padding: 5px;
+}
+
+.hamburger:hover {
+  color: var(--red);
+}
+
+.mobile-only-btn {
+  display: none;
+}
+
+@media (max-width: 1024px) {
+  .navbar {
+    padding: 10px 20px;
+  }
+  
+  .desktop-btn {
+    display: none;
+  }
+  
+  .hamburger {
+    display: block;
+  }
+  
+  .nav-links {
+    position: fixed;
+    top: -100vh;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: rgba(10, 10, 10, 0.98);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: top 0.4s ease-in-out;
+    z-index: 999;
+  }
+  
+  .nav-links.active {
+    top: 0;
+  }
+  
+  .nav-links li {
+    margin: 15px 0;
+  }
+  
+  .nav-links a {
+    font-size: 1.5rem;
+  }
+  
+  .mobile-only-btn {
+    display: block;
+    margin-top: 30px;
+  }
+}

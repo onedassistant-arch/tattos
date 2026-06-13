@@ -1,0 +1,142 @@
+.process-section {
+  background-color: var(--black);
+}
+
+.process-header {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.zigzag-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.zigzag-row {
+  display: flex;
+  min-height: 60vh;
+}
+
+.zigzag-row.reverse {
+  flex-direction: row-reverse;
+}
+
+.zigzag-image {
+  flex: 1;
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed; /* This creates the parallax effect! */
+}
+
+.parallax-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(10, 10, 10, 0.3);
+  transition: background 0.5s ease;
+}
+
+.zigzag-row:hover .parallax-overlay {
+  background: rgba(217, 4, 41, 0.15); /* Subtle red tint over the image */
+}
+
+.zigzag-text {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 80px;
+  background-color: var(--black-light);
+  position: relative;
+}
+
+.step-number-large {
+  font-size: 6rem;
+  font-weight: 800;
+  color: rgba(217, 4, 41, 0.1);
+  font-family: var(--font-heading);
+  line-height: 1;
+  margin-bottom: 20px;
+  transition: all 0.5s ease;
+  display: inline-block;
+}
+
+.zigzag-text h3 {
+  font-size: 2.5rem;
+  color: var(--white);
+  margin-bottom: 20px;
+  transition: all 0.4s ease;
+}
+
+.zigzag-text p {
+  color: var(--gray-light);
+  font-size: 1.1rem;
+  line-height: 1.8;
+  max-width: 500px;
+  transition: all 0.4s ease;
+}
+
+/* Hover Animations */
+.zigzag-row {
+  cursor: default;
+}
+
+.zigzag-row:hover .step-number-large {
+  color: rgba(217, 4, 41, 0.8);
+  transform: translateY(-10px) translateX(10px);
+  text-shadow: 0 0 20px rgba(217, 4, 41, 0.4);
+}
+
+.zigzag-row:hover .zigzag-text h3 {
+  color: var(--red);
+  transform: translateX(10px);
+}
+
+.zigzag-row:hover .zigzag-text p {
+  color: var(--white);
+  transform: translateX(10px);
+}
+
+@media (max-width: 1024px) {
+  .zigzag-text {
+    padding: 50px;
+  }
+}
+
+@media (max-width: 768px) {
+  .zigzag-row, .zigzag-row.reverse {
+    flex-direction: column;
+  }
+  
+  .zigzag-image {
+    min-height: 400px;
+    background-attachment: scroll; /* Disable parallax on mobile to improve performance and UX */
+  }
+  
+  .zigzag-text {
+    padding: 40px 20px;
+  }
+
+  .step-number-large {
+    font-size: 4rem;
+  }
+
+  .zigzag-text h3 {
+    font-size: 1.8rem;
+  }
+}
+
+@media (max-width: 380px) {
+  .step-number-large {
+    font-size: 3rem;
+  }
+  .zigzag-text h3 {
+    font-size: 1.5rem;
+  }
+  .zigzag-image {
+    min-height: 250px;
+  }
+}

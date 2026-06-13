@@ -1,0 +1,115 @@
+.portfolio-section {
+  background-color: var(--black);
+}
+
+.portfolio-filters {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-bottom: 40px;
+}
+
+.filter-btn {
+  background: transparent;
+  color: var(--white);
+  border: 1px solid var(--gray);
+  padding: 8px 20px;
+  border-radius: 30px;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+}
+
+.filter-btn:hover, .filter-btn.active {
+  background: var(--red);
+  border-color: var(--red);
+  box-shadow: 0 0 15px rgba(217, 4, 41, 0.4);
+}
+
+.masonry-grid {
+  column-count: 3;
+  column-gap: 20px;
+}
+
+.masonry-item {
+  break-inside: avoid;
+  margin-bottom: 20px;
+  position: relative;
+  border-radius: 8px;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.masonry-item img {
+  width: 100%;
+  display: block;
+  border-radius: 8px;
+  transition: transform 0.5s ease;
+  filter: grayscale(30%);
+}
+
+.masonry-item:hover img {
+  transform: scale(1.05);
+  filter: grayscale(0%);
+}
+
+.portfolio-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(10, 10, 10, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.masonry-item:hover .portfolio-overlay {
+  opacity: 1;
+}
+
+.portfolio-category {
+  color: var(--white);
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  transform: translateY(20px);
+  transition: transform 0.3s ease;
+}
+
+.masonry-item:hover .portfolio-category {
+  transform: translateY(0);
+}
+
+@media (max-width: 1024px) {
+  .masonry-grid {
+    column-count: 2;
+  }
+}
+
+@media (max-width: 768px) {
+  .masonry-grid {
+    column-count: auto;
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    gap: 15px;
+    padding-bottom: 20px;
+    scrollbar-width: none;
+  }
+  
+  .masonry-grid::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .masonry-item {
+    flex: 0 0 85%;
+    scroll-snap-align: center;
+    margin-bottom: 0;
+  }
+}
