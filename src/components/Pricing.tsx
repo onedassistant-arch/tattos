@@ -1,5 +1,6 @@
 import './Pricing.css';
 import { CheckCircle2 } from 'lucide-react';
+import AnimatedNumber from './AnimatedNumber';
 
 const Pricing = () => {
   return (
@@ -17,7 +18,7 @@ const Pricing = () => {
           <div className="pricing-card">
             <div className="pricing-header">
               <h3>Small Tattoo</h3>
-              <p className="price"><span>Starting from</span> ₹999</p>
+              <p className="price"><span>Starting from</span> <AnimatedNumber prefix="₹" end={999} /></p>
             </div>
             <ul className="pricing-features">
               <li><CheckCircle2 size={18} className="check-icon" /> Under 3x3 inches</li>
@@ -32,7 +33,7 @@ const Pricing = () => {
             <div className="popular-badge">Most Popular</div>
             <div className="pricing-header">
               <h3>Medium Tattoo</h3>
-              <p className="price"><span>Starting from</span> ₹2999</p>
+              <p className="price"><span>Starting from</span> <AnimatedNumber prefix="₹" end={2999} /></p>
             </div>
             <ul className="pricing-features">
               <li><CheckCircle2 size={18} className="check-icon" /> Up to 6x6 inches</li>
@@ -46,7 +47,7 @@ const Pricing = () => {
           <div className="pricing-card">
             <div className="pricing-header">
               <h3>Large Tattoo</h3>
-              <p className="price"><span>Starting from</span> ₹6999</p>
+              <p className="price"><span>Starting from</span> <AnimatedNumber prefix="₹" end={6999} /></p>
             </div>
             <ul className="pricing-features">
               <li><CheckCircle2 size={18} className="check-icon" /> Half-sleeves, Back pieces</li>

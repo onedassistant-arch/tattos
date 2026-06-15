@@ -45,7 +45,7 @@ const Navbar = () => {
         <div className="nav-actions">
           <a href="#booking" className="btn-primary desktop-btn">Book Now</a>
           <button className="hamburger" onClick={toggleMenu} aria-label="Toggle menu">
-            {mobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
+            {mobileMenuOpen ? <X size={22} /> : <Menu size={22} />}
           </button>
         </div>
       </div>

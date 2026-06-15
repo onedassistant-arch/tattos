@@ -10,6 +10,7 @@ import Reviews from './components/Reviews';
 import Process from './components/Process';
 import FAQ from './components/FAQ';
 import Footer from './components/Footer';
+import Instagram from './components/Instagram';
 
 function App() {
   return (
@@ -20,10 +21,11 @@ function App() {
       <Styles />
       <Artists />
       <Portfolio />
+      <Process />
       <Pricing />
       <Booking />
       <Reviews />
-      <Process />
+      <Instagram />
       <FAQ />
       <Footer />
     </>

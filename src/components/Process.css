@@ -84,18 +84,21 @@
   cursor: default;
 }
 
-.zigzag-row:hover .step-number-large {
+.zigzag-row:hover .step-number-large,
+.zigzag-row.active .step-number-large {
   color: rgba(217, 4, 41, 0.8);
   transform: translateY(-10px) translateX(10px);
   text-shadow: 0 0 20px rgba(217, 4, 41, 0.4);
 }
 
-.zigzag-row:hover .zigzag-text h3 {
+.zigzag-row:hover .zigzag-text h3,
+.zigzag-row.active .zigzag-text h3 {
   color: var(--red);
   transform: translateX(10px);
 }
 
-.zigzag-row:hover .zigzag-text p {
+.zigzag-row:hover .zigzag-text p,
+.zigzag-row.active .zigzag-text p {
   color: var(--white);
   transform: translateX(10px);
 }
@@ -107,25 +110,29 @@
 }
 
 @media (max-width: 768px) {
-  .zigzag-row, .zigzag-row.reverse {
-    flex-direction: column;
-  }
+  /* Keep side-by-side left-right layout on mobile as requested */
   
   .zigzag-image {
     min-height: 400px;
-    background-attachment: scroll; /* Disable parallax on mobile to improve performance and UX */
   }
   
   .zigzag-text {
-    padding: 40px 20px;
+    padding: 20px 15px;
   }
 
   .step-number-large {
-    font-size: 4rem;
+    font-size: 2.5rem;
+    margin-bottom: 10px;
   }
 
   .zigzag-text h3 {
-    font-size: 1.8rem;
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+  }
+
+  .zigzag-text p {
+    font-size: 0.85rem;
+    line-height: 1.4;
   }
 }
 

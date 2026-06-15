@@ -84,7 +84,7 @@ button {
   background: linear-gradient(45deg, var(--red-dark), var(--red));
   color: var(--white);
   padding: 14px 32px;
-  border-radius: 4px;
+  border-radius: 50px;
   font-size: 1rem;
   font-weight: 600;
   text-transform: uppercase;
@@ -106,7 +106,7 @@ button {
   background: transparent;
   color: var(--white);
   padding: 12px 30px;
-  border-radius: 4px;
+  border-radius: 50px;
   font-size: 1rem;
   font-weight: 600;
   text-transform: uppercase;

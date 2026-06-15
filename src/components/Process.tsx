@@ -1,3 +1,4 @@
+import { useEffect, useRef } from 'react';
 import './Process.css';
 import img1 from '../assets/about_studio_new.png';
 import img2 from '../assets/style_fineline_1781347097774.png';
@@ -14,6 +15,33 @@ const steps = [
 ];
 
 const Process = () => {
+  const rowRefs = useRef<(HTMLDivElement | null)[]>([]);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('active');
+          } else {
+            entry.target.classList.remove('active');
+          }
+        });
+      },
+      { threshold: 0.5 }
+    );
+
+    rowRefs.current.forEach((ref) => {
+      if (ref) observer.observe(ref);
+    });
+
+    return () => {
+      rowRefs.current.forEach((ref) => {
+        if (ref) observer.unobserve(ref);
+      });
+    };
+  }, []);
+
   return (
     <section className="process-section">
       <div className="process-header section-padding text-center">
@@ -23,7 +51,11 @@ const Process = () => {
 
       <div className="zigzag-container">
         {steps.map((step, index) => (
-          <div key={step.id} className={`zigzag-row ${index % 2 !== 0 ? 'reverse' : ''}`}>
+          <div 
+            key={step.id} 
+            className={`zigzag-row ${index % 2 !== 0 ? 'reverse' : ''}`}
+            ref={(el) => (rowRefs.current[index] = el)}
+          >
             <div className="zigzag-image parallax-bg" style={{ backgroundImage: `url(${step.img})` }}>
               <div className="parallax-overlay"></div>
             </div>

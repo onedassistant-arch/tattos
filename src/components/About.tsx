@@ -1,5 +1,6 @@
 import './About.css';
 import aboutImg from '../assets/about_studio_new.png';
+import AnimatedNumber from './AnimatedNumber';
 
 const About = () => {
   return (
@@ -20,19 +21,19 @@ const About = () => {
           
           <div className="stats-grid">
             <div className="stat-card">
-              <h3>5000+</h3>
+              <h3><AnimatedNumber end={5000} suffix="+" /></h3>
               <p>Tattoos Completed</p>
             </div>
             <div className="stat-card">
-              <h3>10+</h3>
+              <h3><AnimatedNumber end={10} suffix="+" /></h3>
               <p>Years Experience</p>
             </div>
             <div className="stat-card">
-              <h3>4</h3>
+              <h3><AnimatedNumber end={4} /></h3>
               <p>Pro Artists</p>
             </div>
             <div className="stat-card">
-              <h3>100%</h3>
+              <h3><AnimatedNumber end={100} suffix="%" /></h3>
               <p>Sterile Equipment</p>
             </div>
           </div>

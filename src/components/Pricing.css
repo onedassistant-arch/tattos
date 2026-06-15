@@ -12,7 +12,7 @@
 .pricing-card {
   background: var(--black-lighter);
   border: 1px solid rgba(255, 255, 255, 0.05);
-  border-radius: 12px;
+  border-radius: 24px;
   padding: 40px 30px;
   text-align: center;
   transition: all 0.4s ease;
