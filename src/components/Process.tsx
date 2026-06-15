@@ -54,7 +54,7 @@ const Process = () => {
           <div 
             key={step.id} 
             className={`zigzag-row ${index % 2 !== 0 ? 'reverse' : ''}`}
-            ref={(el) => (rowRefs.current[index] = el)}
+            ref={(el) => { rowRefs.current[index] = el; }}
           >
             <div className="zigzag-image parallax-bg" style={{ backgroundImage: `url(${step.img})` }}>
               <div className="parallax-overlay"></div>
